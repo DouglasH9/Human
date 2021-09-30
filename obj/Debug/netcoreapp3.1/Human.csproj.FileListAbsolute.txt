@@ -1,0 +1,4 @@
+/Users/douglasherman/Desktop/CodingDojo/C#/Human/obj/Debug/netcoreapp3.1/Human.csprojAssemblyReference.cache
+/Users/douglasherman/Desktop/CodingDojo/C#/Human/obj/Debug/netcoreapp3.1/Human.AssemblyInfoInputs.cache
+/Users/douglasherman/Desktop/CodingDojo/C#/Human/obj/Debug/netcoreapp3.1/Human.AssemblyInfo.cs
+/Users/douglasherman/Desktop/CodingDojo/C#/Human/obj/Debug/netcoreapp3.1/Human.csproj.CoreCompileInputs.cache
