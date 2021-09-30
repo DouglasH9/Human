@@ -19,20 +19,23 @@ namespace HumanProj
                 Strength = strength;
                 Intelligence = intelligence;
                 Dexterity = dexterity;
+                health = 100;
             }
 
-            public Human(string name, int strength, int intelligence, int dexterity, int healthAmnt)
+            public Human(string name, int str, int intel, int dex, int healthAmnt)
             {
                 Name = name;
-                Strength = strength;
-                Intelligence = intelligence;
-                Dexterity = dexterity;
+                Strength = str;
+                Intelligence = intel;
+                Dexterity = dex;
                 health = healthAmnt;
             }
             
             public int Attack(Human target)
             {
-                target.health -= 5 * Human.Strength;
+                int dmg = Strength * 5;
+                target.health -= dmg;
+                return target.health;
             }
             
         }
