@@ -1,4 +1,5 @@
-using System.Collections.Generic
+using System;
+using System.Collections.Generic;
 
 namespace HumanProj
 {
@@ -34,9 +35,16 @@ namespace HumanProj
             }
              
             // Build Attack method
-            public int Attack(Human target)
+            public virtual int Attack(Human target)
             {
                 int dmg = Strength * 3;
+                target.health -= dmg;
+                Console.WriteLine($"{Name} attacked {target.Name} for {dmg} damage!");
+                return target.health;
+            }
+
+            public virtual int Attack(Human target, int dmg)
+            {
                 target.health -= dmg;
                 Console.WriteLine($"{Name} attacked {target.Name} for {dmg} damage!");
                 return target.health;
@@ -45,21 +53,31 @@ namespace HumanProj
 
     public class Wizard : Human
     {
-        public Wizard(string name)
+        public Wizard(string name) : base(name, 3, 25, 3, 50){}
+        public override int Attack(Human target)
         {
-            Name = name;
-            Intelligence = 25;
-            health = 50;
+            int dished = base.Attack(target, Intelligence * 5);
+            target.health -= dished;
+            return dished;
         }
     }
     public class Ninja : Human
     {
-        public Ninja(string name)
+        public Ninja(string name) : base(name, 3, 3, 175, 100){}
+        public override int Attack(Human target)
         {
-            Name = name;
-            Dexterity = 175;
-            
+            Random rand = new Random();
+            int dished = base.Attack(target, Dexterity * 5);
+            if (rand.Next(100) <= 20)
+            {
+                dished += 10;
+            }
+            target.health -= dished;
+            return dished;
         }
     }
-
+    public class Samurai : Human
+    {
+        public Samurai(string name) : base(name, 3, 3, 3, 200){}
+    }
 }

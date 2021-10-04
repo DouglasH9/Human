@@ -6,7 +6,7 @@ namespace HumanProj
     {
         static void Main(string[] args)
         {
-            Human newHuman = new Human("Doug", 100, 100, 100);
+            Ninja Doug = new Ninja("Doug");
             Console.WriteLine("Hello World!");
         }
     }
